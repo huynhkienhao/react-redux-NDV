@@ -20,7 +20,7 @@ class Search extends Component {
                     </div>
                 </div>
                 <div className="btn d-block btn-outline-secondary mt-2" onClick={() => this.props.ketNoi()}>Đóng lại</div>;
-                <div className="btn d-block btn-outline-info">Thêm mới</div>;
+                <div className="btn d-block btn-outline-info" onClick={() => this.props.ketNoi()}>Thêm mới</div>;
                 <hr />
             </div>
         );

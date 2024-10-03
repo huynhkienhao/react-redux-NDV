@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 class AddUser extends Component {
-    render() {
-        return (
-            <div className="col-md-3">
+    kiemTraTrangThai = () => {
+        if (this.props.hienThiForm === true) {
+            return (
                 <div className="card border-primary mb-3" style={{ maxWidth: "18rem" }}>
                     <div className="card-header">Thêm mới user vào hệ thống</div>
                     <div className="card-body text-primary">
@@ -33,6 +33,15 @@ class AddUser extends Component {
                             <div className="btn btn-primary d-block">Thêm mới</div>
                         </div>
                     </div>
+                </div>
+            )
+        }
+    }
+    render() {
+        return (
+            <div className="col-md-3">
+                <div>
+                    {this.kiemTraTrangThai()}
                 </div>
             </div>
         );
