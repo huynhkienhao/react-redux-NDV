@@ -4,13 +4,15 @@ import AddUser from './AddUser';
 import Header from './Header';
 import Search from './Search';
 import TableData from './TableData';
+import DataUser from './Data.json';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      hienThiForm: true
+      hienThiForm: true,
+      data: DataUser
     }
   }
 
@@ -21,6 +23,8 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.data);
+
     return (
       <div>
         <Header />
