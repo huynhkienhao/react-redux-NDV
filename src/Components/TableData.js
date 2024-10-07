@@ -12,7 +12,7 @@ class TableData extends Component {
         console.log(this.props.dataUserProps);
 
         return (
-            <div className="col-md-9">
+            <div className="col">
                 <table className="table table-bordered table-striped table-hover">
                     <thead>
                         <tr>
