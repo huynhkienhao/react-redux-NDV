@@ -23,9 +23,9 @@ class Search extends Component {
                             className="form-control"
                             placeholder="Nhập từ khoá"
                         />
-                        <div className="btn btn-info">
+                        <button className="btn btn-info" onClick={this.props.checkConnectProps}>
                             <i className="fa-solid fa-magnifying-glass text-white" />
-                        </div>
+                        </button>
                     </div>
                 </div>
                 {this.hienThiNut()}
