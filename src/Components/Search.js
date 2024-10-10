@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            tempValue: ''
+        }
+    }
+
+    isChange = (event) => {
+        console.log(event.target.value);
+        this.setState({
+            tempValue: event.target.value
+        });
+    }
 
     hienThiNut = () => {
         if (this.props.hienThiForm === true) {
@@ -13,17 +26,19 @@ class Search extends Component {
     render() {
         return (
             <div className="col-md-12">
-                <div className="form-group mt-2">
+                <div className="form-group mt-2 mb-3">
                     <div
                         className="searchForm__group btn-group d-flex"
-                        style={{ width: "40%" }}
+                        style={{ width: "100%" }}
                     >
                         <input
                             type="text"
                             className="form-control"
+                            onChange={(event) => this.isChange(event)}
                             placeholder="Nhập từ khoá"
+                            style={{ border: "1px solid #000" }}
                         />
-                        <button className="btn btn-info" onClick={this.props.checkConnectProps}>
+                        <button className="btn btn-info" onClick={(dl) => this.props.checkConnectProps(this.state.tempValue)}>
                             <i className="fa-solid fa-magnifying-glass text-white" />
                         </button>
                     </div>
