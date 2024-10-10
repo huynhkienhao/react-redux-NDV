@@ -50,7 +50,7 @@ class App extends Component {
                 ketNoi={() => this.doiTrangThai()}
                 hienThiForm={this.state.hienThiForm} />
               <div className='row'>
-                <TableData dataUserProps={this.state.data} />
+                <TableData dataUserProps={ketQua} />
                 <AddUser hienThiForm={this.state.hienThiForm} />
               </div>
             </div>
