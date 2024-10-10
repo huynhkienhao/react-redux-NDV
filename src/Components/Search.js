@@ -35,7 +35,7 @@ class Search extends Component {
                             type="text"
                             className="form-control"
                             onChange={(event) => this.isChange(event)}
-                            placeholder="Nhập từ khoá"
+                            placeholder="Nhập tên cần tìm"
                             style={{ border: "1px solid #000" }}
                         />
                         <button className="btn btn-info" onClick={(dl) => this.props.checkConnectProps(this.state.tempValue)}>

@@ -12,12 +12,16 @@ class App extends Component {
 
     this.state = {
       hienThiForm: true,
-      data: DataUser
+      data: DataUser,
+      searchText: ''
     }
   }
 
   getTextSearch = (dl) => {
-    console.log(`Dữ liệu cha nhận được là ${dl}`);
+    this.setState({
+      searchText: dl
+    });
+    console.log(`Dữ liệu cha nhận được là ${this.state.searchText}`);
   }
 
   doiTrangThai = () => {
@@ -27,6 +31,14 @@ class App extends Component {
   }
 
   render() {
+    let ketQua = [];
+    this.state.data.forEach((item) => {
+      if (item.name.indexOf(this.state.searchText) !== -1) {
+        ketQua.push(item);
+      }
+    })
+    console.log(ketQua);
+
     return (
       <div>
         <Header />
