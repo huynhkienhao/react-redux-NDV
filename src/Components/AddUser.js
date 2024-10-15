@@ -11,23 +11,23 @@ class AddUser extends Component {
         }
     }
 
+
+
     isChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        console.log(name);
-        console.log(value);
 
         this.setState({
             [name]: value
         });
 
         // Package into item
-        let item = {};
-        item.id = this.state.id;
-        item.name = this.state.name;
-        item.tel = this.state.tel;
-        item.permission = this.state.permission;
-        console.log(item);
+        // let item = {};
+        // item.id = this.state.id;
+        // item.name = this.state.name;
+        // item.tel = this.state.tel;
+        // item.permission = this.state.permission;
+        // console.log(item);
     }
 
     kiemTraTrangThai = () => {
@@ -64,7 +64,9 @@ class AddUser extends Component {
                                 </select>
                             </div>
                             <div className="form-group">
-                                <div className="btn btn-primary d-block">Thêm mới</div>
+                                <div
+                                    className="btn btn-primary d-block"
+                                    onClick={(name, tel, permission) => this.props.add(this.state.name, this.state.tel, this.state.permission)}>Thêm mới</div>
                             </div>
                         </div>
                     </div>

@@ -17,6 +17,17 @@ class App extends Component {
     }
   }
 
+  getNewUserData = (name, tel, permission) => {
+    let item = {};
+    item.id = "";
+    item.name = name;
+    item.tel = tel;
+    item.permission = permission;
+
+    console.log('Connect successfully');
+    console.log(item);
+  }
+
   getTextSearch = (dl) => {
     this.setState({
       searchText: dl
@@ -51,7 +62,7 @@ class App extends Component {
                 hienThiForm={this.state.hienThiForm} />
               <div className='row'>
                 <TableData dataUserProps={ketQua} />
-                <AddUser hienThiForm={this.state.hienThiForm} />
+                <AddUser add={(name, tel, permission) => this.getNewUserData(name, tel, permission)} hienThiForm={this.state.hienThiForm} />
               </div>
             </div>
           </div>
