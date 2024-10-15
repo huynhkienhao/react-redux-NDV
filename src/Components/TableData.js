@@ -9,7 +9,7 @@ class TableData extends Component {
 
 
     render() {
-        console.log(this.props.dataUserProps);
+        // console.log(this.props.dataUserProps);
 
         return (
             <div className="col">
