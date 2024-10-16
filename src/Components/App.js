@@ -24,8 +24,15 @@ class App extends Component {
     item.tel = tel;
     item.permission = permission;
 
+    let items = this.state.data;
+    items.push(item);
+
+    this.setState({
+      data: items
+    });
+
     console.log('Connect successfully');
-    console.log(item);
+    console.log(this.state.data);
   }
 
   getTextSearch = (dl) => {
@@ -48,7 +55,6 @@ class App extends Component {
         ketQua.push(item);
       }
     })
-    // console.log(ketQua);
 
     return (
       <div>
