@@ -18,6 +18,10 @@ class App extends Component {
     }
   }
 
+  editUserGrandparent = () => {
+    alert('Connect successfully');
+  }
+
   getNewUserData = (name, tel, permission) => {
     let item = {};
     item.id = uuidv4();
@@ -68,7 +72,7 @@ class App extends Component {
                 ketNoi={() => this.doiTrangThai()}
                 hienThiForm={this.state.hienThiForm} />
               <div className='row'>
-                <TableData dataUserProps={ketQua} />
+                <TableData editUserParent={() => this.editUserGrandparent()} dataUserProps={ketQua} />
                 <AddUser add={(name, tel, permission) => this.getNewUserData(name, tel, permission)} hienThiForm={this.state.hienThiForm} />
               </div>
             </div>
