@@ -5,6 +5,7 @@ import Header from './Header';
 import Search from './Search';
 import TableData from './TableData';
 import DataUser from './Data.json';
+const { v4: uuidv4 } = require('uuid');
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class App extends Component {
 
   getNewUserData = (name, tel, permission) => {
     let item = {};
-    item.id = "";
+    item.id = uuidv4();
     item.name = name;
     item.tel = tel;
     item.permission = permission;
