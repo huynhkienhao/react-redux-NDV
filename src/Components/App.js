@@ -15,7 +15,8 @@ class App extends Component {
       hienThiForm: true,
       data: DataUser,
       searchText: '',
-      editUserStatus: true
+      editUserStatus: true,
+      userEditObject: {}
     }
   }
 
@@ -26,8 +27,9 @@ class App extends Component {
   }
 
   editUserGrandparent = (user) => {
-    console.log('Connect successfully');
-    console.log(user);
+    this.setState({
+      userEditObject: user
+    });
   }
 
   getNewUserData = (name, tel, permission) => {
@@ -76,6 +78,7 @@ class App extends Component {
           <div className="container">
             <div className="row">
               <Search
+                userEditObjectParent={this.state.userEditObject}
                 checkConnectProps={(dl) => this.getTextSearch(dl)}
                 ketNoi={() => this.doiTrangThai()}
                 hienThiForm={this.state.hienThiForm}

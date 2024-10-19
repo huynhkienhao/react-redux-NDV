@@ -15,6 +15,7 @@ class EditUser extends Component {
                                         name="name"
                                         className="form-control"
                                         placeholder="Tên user"
+                                        defaultValue={this.props.userEditObjectChild.name}
                                     />
                                 </div>
                                 <div className="form-group mb-2">
@@ -23,10 +24,11 @@ class EditUser extends Component {
                                         name="tel"
                                         className="form-control"
                                         placeholder="Điện thoại"
+                                        defaultValue={this.props.userEditObjectChild.tel}
                                     />
                                 </div>
                                 <div className="form-group mb-3">
-                                    <select className="form-select" name="permission" required>
+                                    <select className="form-select" name="permission" defaultValue={this.props.userEditObjectChild.permission} required>
                                         <option>Chọn quyền mặc định</option>
                                         <option value={1}>Admin</option>
                                         <option value={2}>Moderator</option>
