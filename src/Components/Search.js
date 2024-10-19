@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
+import EditUser from './EditUser';
 
 class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
             tempValue: ''
+        }
+    }
+
+    isShowEditForm = () => {
+        if (this.props.editUserStatus === true) {
+            return <EditUser />
         }
     }
 
@@ -27,6 +34,7 @@ class Search extends Component {
     render() {
         return (
             <div className="col-md-12">
+                {this.isShowEditForm()}
                 <div className="form-group mt-2 mb-3">
                     <div
                         className="searchForm__group btn-group d-flex"
