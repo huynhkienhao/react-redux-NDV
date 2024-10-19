@@ -15,7 +15,7 @@ class App extends Component {
       hienThiForm: true,
       data: DataUser,
       searchText: '',
-      editUserStatus: false
+      editUserStatus: true
     }
   }
 
