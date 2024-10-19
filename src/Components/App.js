@@ -19,6 +19,12 @@ class App extends Component {
     }
   }
 
+  changeEditUserStatus = () => {
+    this.setState({
+      editUserStatus: !this.state.editUserStatus
+    });
+  }
+
   editUserGrandparent = (user) => {
     console.log('Connect successfully');
     console.log(user);
@@ -73,10 +79,19 @@ class App extends Component {
                 checkConnectProps={(dl) => this.getTextSearch(dl)}
                 ketNoi={() => this.doiTrangThai()}
                 hienThiForm={this.state.hienThiForm}
-                editUserStatus={this.state.editUserStatus} />
+                editUserStatus={this.state.editUserStatus}
+                changeEditUserStatusGrandparent={() => this.changeEditUserStatus()}
+              />
               <div className='row'>
-                <TableData editUserParent={(user) => this.editUserGrandparent(user)} dataUserProps={ketQua} />
-                <AddUser add={(name, tel, permission) => this.getNewUserData(name, tel, permission)} hienThiForm={this.state.hienThiForm} />
+                <TableData
+                  editUserParent={(user) => this.editUserGrandparent(user)}
+                  dataUserProps={ketQua}
+                  changeEditUserStatusGrandparent={() => this.changeEditUserStatus()}
+                />
+                <AddUser
+                  add={(name, tel, permission) => this.getNewUserData(name, tel, permission)}
+                  hienThiForm={this.state.hienThiForm}
+                />
               </div>
             </div>
           </div>

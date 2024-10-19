@@ -5,6 +5,7 @@ class TableData extends Component {
 
     mappingDataUser = () => this.props.dataUserProps.map((value, key) => (
         <TableDataRow
+            changeEditUserStatusParent={() => this.props.changeEditUserStatusGrandparent()}
             editUserChild={(user) => this.props.editUserParent(value)}
             userName={value.name}
             key={key}
@@ -16,8 +17,6 @@ class TableData extends Component {
 
 
     render() {
-        // console.log(this.props.dataUserProps);
-
         return (
             <div className="col">
                 <table className="table table-bordered table-striped table-hover">

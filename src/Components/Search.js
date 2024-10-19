@@ -11,7 +11,7 @@ class Search extends Component {
 
     isShowEditForm = () => {
         if (this.props.editUserStatus === true) {
-            return <EditUser />
+            return <EditUser changeEditUserStatusParent={() => this.props.changeEditUserStatusGrandparent()} />
         }
     }
 

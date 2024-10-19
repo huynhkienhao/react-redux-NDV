@@ -38,6 +38,7 @@ class EditUser extends Component {
                                         type='reset'
                                         value="Submit"
                                         className="btn btn-success w-100"
+                                        onClick={() => this.props.changeEditUserStatusParent()}
                                     />
                                 </div>
                             </div>

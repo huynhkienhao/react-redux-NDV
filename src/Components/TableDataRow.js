@@ -12,6 +12,7 @@ class TableDataRow extends Component {
     }
     editUserClick = () => {
         this.props.editUserChild();
+        this.props.changeEditUserStatusParent();
     }
     render() {
         return (
