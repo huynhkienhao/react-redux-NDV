@@ -15,13 +15,19 @@ class App extends Component {
       hienThiForm: true,
       data: DataUser,
       searchText: '',
-      editUserStatus: true,
+      editUserStatus: false,
       userEditObject: {}
     }
   }
 
   getUserEditInfoFromApp = (info) => {
-    console.log(`Username sau khi sửa thông tin là ${info.name}`);
+    this.state.data.forEach((value, key) => {
+      if (value.id === info.id) {
+        value.name = info.name;
+        value.tel = info.tel;
+        value.permission = info.permission;
+      }
+    });
   }
 
   changeEditUserStatus = () => {
