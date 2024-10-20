@@ -20,6 +20,10 @@ class App extends Component {
     }
   }
 
+  getUserEditInfoFromApp = (info) => {
+    console.log(`Username sau khi sửa thông tin là ${info.name}`);
+  }
+
   changeEditUserStatus = () => {
     this.setState({
       editUserStatus: !this.state.editUserStatus
@@ -78,6 +82,7 @@ class App extends Component {
           <div className="container">
             <div className="row">
               <Search
+                getUserEditInfoFromApp={(info) => this.getUserEditInfoFromApp(info)}
                 userEditObjectParent={this.state.userEditObject}
                 checkConnectProps={(dl) => this.getTextSearch(dl)}
                 ketNoi={() => this.doiTrangThai()}

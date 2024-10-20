@@ -10,7 +10,15 @@ class EditUser extends Component {
             permission: this.props.userEditObjectChild.permission
         }
     }
-
+    submitButtonEditUser = () => {
+        let info = {};
+        info.id = this.state.id;
+        info.name = this.state.name;
+        info.tel = this.state.tel;
+        info.permission = this.state.permission;
+        this.props.getUserEditInfo(info);
+        this.props.changeEditUserStatusParent(); // Hide form
+    }
     isChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -61,10 +69,10 @@ class EditUser extends Component {
                                 </div>
                                 <div className="form-group">
                                     <input
-                                        type='reset'
+                                        type='button'
                                         value="Submit"
                                         className="btn btn-success w-100"
-                                        onClick={() => this.props.changeEditUserStatusParent()}
+                                        onClick={() => this.submitButtonEditUser()}
                                     />
                                 </div>
                             </div>
