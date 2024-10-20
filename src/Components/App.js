@@ -20,6 +20,13 @@ class App extends Component {
     }
   }
 
+  removeUserClick = (id) => {
+    let tempData = this.state.data.filter((user) => user.id !== id)
+    this.setState({
+      data: tempData
+    });
+  }
+
   getUserEditInfoFromApp = (info) => {
     this.state.data.forEach((value, key) => {
       if (value.id === info.id) {
@@ -98,6 +105,7 @@ class App extends Component {
               />
               <div className='row'>
                 <TableData
+                  removeUserClick={(id) => this.removeUserClick(id)}
                   editUserParent={(user) => this.editUserGrandparent(user)}
                   dataUserProps={ketQua}
                   changeEditUserStatusGrandparent={() => this.changeEditUserStatus()}

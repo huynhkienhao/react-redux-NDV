@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import TableDataRow from './TableDataRow';
 
 class TableData extends Component {
-
+    removeUserClick = (id) => {
+        this.props.removeUserClick(id);
+    }
     mappingDataUser = () => this.props.dataUserProps.map((value, key) => (
         <TableDataRow
             changeEditUserStatusParent={() => this.props.changeEditUserStatusGrandparent()}
@@ -12,6 +14,8 @@ class TableData extends Component {
             stt={key}
             tel={value.tel}
             permission={value.permission}
+            id={value.id}
+            removeUserClick={(id) => this.removeUserClick(id)}
         />
     ))
 
