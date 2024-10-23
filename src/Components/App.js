@@ -11,12 +11,25 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      hienThiForm: true,
-      data: DataUser,
-      searchText: '',
-      editUserStatus: false,
-      userEditObject: {}
+    // Kiểm tra localStorage và khởi tạo state trước khi render
+    if (localStorage.getItem('userData') === null) {
+      this.state = {
+        data: DataUser, // Dữ liệu mặc định nếu chưa có trong localStorage
+        hienThiForm: true,
+        searchText: '',
+        editUserStatus: false,
+        userEditObject: {}
+      };
+      // Lưu dữ liệu mặc định vào localStorage
+      localStorage.setItem('userData', JSON.stringify(DataUser));
+    } else {
+      this.state = {
+        data: JSON.parse(localStorage.getItem('userData')),
+        hienThiForm: true,
+        searchText: '',
+        editUserStatus: false,
+        userEditObject: {}
+      };
     }
   }
 
@@ -25,6 +38,8 @@ class App extends Component {
     this.setState({
       data: tempData
     });
+    // Đây vào dữ liệu localStorage
+    localStorage.setItem('userData', JSON.stringify(tempData));
   }
 
   getUserEditInfoFromApp = (info) => {
@@ -35,6 +50,7 @@ class App extends Component {
         value.permission = info.permission;
       }
     });
+    localStorage.setItem('userData', JSON.stringify(this.state.data));
   }
 
   changeEditUserStatus = () => {
@@ -62,9 +78,7 @@ class App extends Component {
     this.setState({
       data: items
     });
-
-    console.log('Connect successfully');
-    console.log(this.state.data);
+    localStorage.setItem('userData', JSON.stringify(items));
   }
 
   getTextSearch = (dl) => {
